@@ -13,15 +13,18 @@ public class ClientTextApplication{
 		
 		try {
 	
-		Socket socket = new Socket(InetAddress.getLocalHost(), 4221);
+		Socket socket = new Socket(InetAddress.getLocalHost()
+					   , 4221);
 		
 		
 		// Read from network
-		DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
+		DataInputStream dataInputStream = new DataInputStream
+			(socket.getInputStream());
 		
 		// Display the word amount
 		int wordAmount = dataInputStream.readInt();
-		System.out.println("The sentence contains "+ wordAmount + " words");
+		System.out.println("The sentence contains "+ wordAmount 
+				   + " words");
 		
 		// Close everything
 		dataInputStream.close();
